@@ -1,6 +1,6 @@
 ## Puertas y Aluminio de la Costa :factory:
 
-### Aplicativo web para la gestión de ingresos y egresos de PAC(Puertas y Aluminio de la Costa). El sistema deberá permitir visualizar los totales de la empresa para que un determinado gerente pueda tomar decisiones sobre la coyuntura financiera. 🚀
+### Aplicativo web para la gestión de ingresos y egresos de PAC (Puertas y Aluminio de la Costa). El sistema deberá permitir visualizar los totales de la empresa para que un determinado gerente pueda tomar decisiones sobre la coyuntura financiera. 🚀
 
 
 ```java
