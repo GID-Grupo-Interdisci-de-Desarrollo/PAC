@@ -23,7 +23,7 @@ class Scrum {
 
 class GID extends Scrum{
     
-    public product = "Puertas y Aluminio de la Costa";
+    public String product = "Puertas y Aluminio de la Costa";
     
     public GID(String scrumMaster, String productOwner, String developer1, String developer2, String developer3){
  
