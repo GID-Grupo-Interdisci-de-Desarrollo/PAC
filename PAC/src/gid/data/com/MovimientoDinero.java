@@ -2,22 +2,22 @@ package gid.data.com;
 
 public class MovimientoDinero {
 
-    private double monto;
+    private double Monto;
     String Concepto;
     String Usuario;
 
-    public MovimientoDinero(double monto, String Concepto, String Usuario) {
-        this.monto=monto;
-        this.Concepto=Concepto;
-        this.Usuario=Usuario;
+    public MovimientoDinero(double Monto, String Concepto, String Usuario) {
+        this.Monto = Monto;
+        this.Concepto = Concepto;
+        this.Usuario = Usuario;
     }
 
     public double getMonto() {
-        return monto;
+        return Monto;
     }
 
     public void setMonto(double monto) {
-        this.monto = monto;
+        this.Monto = monto;
     }
 
     public String getConcepto() {
