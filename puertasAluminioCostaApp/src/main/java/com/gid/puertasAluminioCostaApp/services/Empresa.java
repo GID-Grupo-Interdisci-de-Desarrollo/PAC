@@ -1,4 +1,4 @@
-package gid.data.com;
+package com.gid.puertasAluminioCostaApp.services;
 
 public class Empresa {
     private String Nombre;
