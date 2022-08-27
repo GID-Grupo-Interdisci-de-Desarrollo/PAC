@@ -1,47 +1,47 @@
 package com.gid.puertasAluminioCostaApp.services;
 
 public class Empresa {
-    private String Nombre;
-    private String Direccion;
-    private Integer Telefono;
-    private String Nit;
+    private String nombre;
+    private String direccion;
+    private int telefono;
+    private String nit;
 
-    public Empresa (String Nombre, String Direccion, Integer Telefono, String Nit, String nit) {
-        this.Nombre = Nombre;
-        this.Direccion = Direccion;
-        this.Nit = Nit;
-        this.Telefono = Telefono;
+    public Empresa (String nombre, String direccion, int telefono, String nit) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.nit = nit;
+        this.telefono = telefono;
     }
 
     public String getNombre() {
-        return Nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getDireccion() {
-        return Direccion;
+        return this.direccion;
     }
 
     public void setDireccion(String direccion) {
-        Direccion = direccion;
+        this.direccion = direccion;
     }
 
-    public Integer getTelefono() {
-        return Telefono;
+    public int getTelefono() {
+        return this.telefono;
     }
 
-    public void setTelefono(Integer telefono) {
-        Telefono = telefono;
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 
     public String getNit() {
-        return Nit;
+        return this.nit;
     }
 
     public void setNit(String nit) {
-        Nit = nit;
+        this.nit = nit;
     }
 }

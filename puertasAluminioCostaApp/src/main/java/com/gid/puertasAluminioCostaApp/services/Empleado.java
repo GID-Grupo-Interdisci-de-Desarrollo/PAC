@@ -1,48 +1,48 @@
 package com.gid.puertasAluminioCostaApp.services;
 
 public class Empleado {
-    private String Nombre;
-    private String Correo;
-    private String Empresa;
-    private String Rol;
+    private String nombre;
+    private String correo;
+    private Empresa empresa;
+    private String rol;
 
-    public Empleado (String Nombre,String Correo,String Empresa, String Rol) {
-        this.Nombre = Nombre;
-        this.Correo = Correo;
-        this.Empresa = Empresa;
-        this.Rol = Rol;
+    public Empleado (String nombre, String correo, Empresa empresa, String rol) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.empresa = empresa;
+        this.rol = rol;
 
     }
 
     public String getNombre() {
-        return Nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getCorreo() {
-        return Correo;
+        return this.correo;
     }
 
     public void setCorreo(String correo) {
-        Correo = correo;
+        this.correo = correo;
     }
 
-    public String getEmpresa() {
-        return Empresa;
+    public Empresa getEmpresa() {
+        return this.empresa;
     }
 
-    public void setEmpresa(String empresa) {
-        Empresa = empresa;
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
     public String getRol() {
-        return Rol;
+        return this.rol;
     }
 
     public void setRol(String rol) {
-        Rol = rol;
+        this.rol = rol;
     }
 }

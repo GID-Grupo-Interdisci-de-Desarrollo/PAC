@@ -2,37 +2,37 @@ package com.gid.puertasAluminioCostaApp.services;
 
 public class MovimientoDinero {
 
-    private double Monto;
-    String Concepto;
-    String Usuario;
+    private double monto;
+    String concepto;
+    String empleado;
 
-    public MovimientoDinero(double Monto, String Concepto, String Usuario) {
-        this.Monto = Monto;
-        this.Concepto = Concepto;
-        this.Usuario = Usuario;
+    public MovimientoDinero(double monto, String concepto, String empleado) {
+        this.monto = monto;
+        this.concepto = concepto;
+        this.empleado = empleado;
     }
 
     public double getMonto() {
-        return Monto;
+        return this.monto;
     }
 
     public void setMonto(double monto) {
-        this.Monto = monto;
+        this.monto = monto;
     }
 
     public String getConcepto() {
-        return Concepto;
+        return this.concepto;
     }
 
     public void setConcepto(String concepto) {
-        Concepto = concepto;
+        this.concepto = concepto;
     }
 
-    public String getUsuario() {
-        return Usuario;
+    public String getEmpleado() {
+        return this.empleado;
     }
 
-    public void setUsuario(String usuario) {
-        Usuario = usuario;
+    public void setEmpleado(String empleado) {
+        this.empleado = empleado;
     }
 }
