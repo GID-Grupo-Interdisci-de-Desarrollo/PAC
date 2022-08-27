@@ -1,4 +1,4 @@
-package com.gid.puertasAluminioCostaApp.services;
+package com.gid.puertasAluminioCostaApp.entities;
 
 public class Empresa {
     private String nombre;
