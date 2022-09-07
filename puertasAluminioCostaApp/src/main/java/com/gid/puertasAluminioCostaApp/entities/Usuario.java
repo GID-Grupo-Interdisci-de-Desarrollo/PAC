@@ -1,12 +1,12 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
-public class Empleado {
+public class Usuario {
     private String nombre;
     private String correo;
     private Empresa empresa;
     private String rol;
 
-    public Empleado (String nombre, String correo, Empresa empresa, String rol) {
+    public Usuario(String nombre, String correo, Empresa empresa, String rol) {
         this.nombre = nombre;
         this.correo = correo;
         this.empresa = empresa;
