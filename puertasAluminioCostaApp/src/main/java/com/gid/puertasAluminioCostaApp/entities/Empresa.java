@@ -6,7 +6,7 @@ public class Empresa {
     private int telefono;
     private String nit;
 
-    public Empresa (String nombre, String direccion, int telefono, String nit) {
+    public Empresa () {
         this.nombre = nombre;
         this.direccion = direccion;
         this.nit = nit;
@@ -43,5 +43,8 @@ public class Empresa {
 
     public void setNit(String nit) {
         this.nit = nit;
+    }
+
+    public void getNit(int i) {
     }
 }

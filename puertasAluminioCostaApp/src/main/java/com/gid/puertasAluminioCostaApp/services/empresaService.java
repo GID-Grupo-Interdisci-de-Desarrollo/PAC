@@ -28,14 +28,14 @@ public class empresaService {
     public Empresa selectOne(int id){
 
         // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new Empresa("UnaEmpresa", "direccion", 122345456, "dfghj");
+        return new Empresa();
 
     }
 
     public void insertOne(String nombre, String direccion, int telefono, String nit){
 
         // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        new Empresa(nombre, direccion, telefono, nit);
+        new Empresa();
 
     }
 

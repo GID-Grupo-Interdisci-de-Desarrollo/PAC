@@ -33,7 +33,7 @@ public class UsuarioService {
         return new Usuario(
                 "Pepito",
                 "Pérez",
-                new Empresa("UnaEmpresa", "direccion", 122345456, "dfghj"),
+                new Empresa(),
                 "usuario"
         );
 
