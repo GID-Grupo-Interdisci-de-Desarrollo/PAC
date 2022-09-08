@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class empresaService {
+public class EmpresaService {
 
     // Se prepara el servicio para la inicialización del repositorio.
 
