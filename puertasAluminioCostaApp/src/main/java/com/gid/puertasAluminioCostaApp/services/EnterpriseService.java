@@ -1,12 +1,12 @@
 package com.gid.puertasAluminioCostaApp.services;
-import com.gid.puertasAluminioCostaApp.entities.Empresa;
+import com.gid.puertasAluminioCostaApp.entities.Enterprise;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EmpresaService {
+public class EnterpriseService {
 
     // Se prepara el servicio para la inicialización del repositorio.
 
@@ -20,22 +20,22 @@ public class EmpresaService {
 
      */
 
-    public List<Empresa> selectAll(){
+    public List<Enterprise> selectAll(){
         // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new ArrayList<Empresa>();
+        return new ArrayList<Enterprise>();
     }
 
-    public Empresa selectOne(int id){
+    public Enterprise selectOne(int id){
 
         // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new Empresa();
+        return new Enterprise();
 
     }
 
-    public void insertOne(String nombre, String direccion, int telefono, String nit){
+    public void insertOne(String name, String address, int phone, String nit){
 
         // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        new Empresa();
+        new Enterprise();
 
     }
 

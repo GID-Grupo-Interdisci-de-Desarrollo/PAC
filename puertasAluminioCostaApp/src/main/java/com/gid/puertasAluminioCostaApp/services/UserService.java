@@ -1,14 +1,14 @@
 package com.gid.puertasAluminioCostaApp.services;
 
-import com.gid.puertasAluminioCostaApp.entities.Empresa;
-import com.gid.puertasAluminioCostaApp.entities.Usuario;
+import com.gid.puertasAluminioCostaApp.entities.Enterprise;
+import com.gid.puertasAluminioCostaApp.entities.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UsuarioService {
+public class UserService {
 
     // Se prepara el servicio para la inicialización del repositorio.
 
@@ -22,27 +22,27 @@ public class UsuarioService {
 
     */
 
-    public List<Usuario> selectAll(){
+    public List<User> selectAll(){
         // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new ArrayList<Usuario>();
+        return new ArrayList<User>();
     }
 
-    public Usuario selectOne(int id){
+    public User selectOne(int id){
 
         // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new Usuario(
+        return new User(
                 "Pepito",
                 "Pérez",
-                new Empresa(),
+                new Enterprise(),
                 "usuario"
         );
 
     }
 
-    public void insertOne(String nombre, String correo, Empresa empresa, String rol){
+    public void insertOne(String name, String email, Enterprise enterprise, String rol){
 
         // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        new Usuario(nombre, correo, empresa, rol);
+        new User(name, email, enterprise, rol);
 
     }
 
