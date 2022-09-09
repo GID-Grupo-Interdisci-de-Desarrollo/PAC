@@ -11,35 +11,32 @@ public class EnterpriseController {
 
     IEmpresaService EmpresaService;
 
-    public EnterpriseController(IEmpresaService EnterpriseService){ this.EmpresaService = EnterpriceService}
+    public EnterpriseController(IEmpresaService EmpresaService){
+        this.EmpresaService = EmpresaService
+    }
 
-    //GET
     @GetMapping ("")
     public List <Enterprise> listEnterprise() {return this.service.getListaEmpresa();}
 
-    //POST
     @PostMapping ("")
-    public Enterprise createEnterprise(@RequestBody Enterprise enterprise) {
-        return this.service.insertOne(enterprise);
+    public Enterprise crearEmpresaEnterprise(@RequestBody Enterprise enterprise) {
+        return this.service.crearEmpresa(enterprise);
     }
 
-    //GET
+
     @RequestMapping ("[id]")
     @GetMapping
-    public String getSelectOne() {
+    public String getNombre() {
         return "nombre obtenido";
     }
 
-    //PATCH
     @PatchMapping
-    public String updateUser(){
+    public String updateNombre(){
         return "usuario actualizado";
     }
 
-
-    //DELETE
     @DeleteMapping
-    public String deleteUser (){
+    public String deleteNombre (){
         return "nombre eliminado";
     }
 
