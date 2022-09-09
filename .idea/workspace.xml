@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0ccc710-badd-4bfd-a7f2-70b2c9c7f8fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PAC/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PAC/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PAC/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puertasAluminioCostaApp/src/main/java/com/gid/puertasAluminioCostaApp/controllers/TransactionController.java" afterDir="false" />
-    </list>
+    <list default="true" id="1dc6607d-2b10-479b-bafd-1aacc394e1e8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,10 +18,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2DgiXS5YLoJsXf73gLPpQr8iifj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2EVqiR0Jl0j0NEWudmbXGz940Ps" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,17 +27,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/jisus/PAC/puertasAluminioCostaApp"
+    "last_opened_file_path": "C:/Users/LUISA FERNANDA/PAC/puertasAluminioCostaApp"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b0ccc710-badd-4bfd-a7f2-70b2c9c7f8fd" name="Changes" comment="" />
-      <created>1661127170672</created>
+      <changelist id="1dc6607d-2b10-479b-bafd-1aacc394e1e8" name="Changes" comment="" />
+      <created>1662691227309</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1661127170672</updated>
+      <updated>1662691227309</updated>
     </task>
     <servers />
   </component>
