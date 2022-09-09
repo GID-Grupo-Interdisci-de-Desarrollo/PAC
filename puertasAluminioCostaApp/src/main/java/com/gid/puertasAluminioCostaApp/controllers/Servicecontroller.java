@@ -24,7 +24,7 @@ public class UsersController {
     }
 
 
-    @RequestMapping ("[id]")
+    @RequestMapping ("/user/[id]")
     @GetMapping
     public String getNombre() {
         return "nombre obtenido";
