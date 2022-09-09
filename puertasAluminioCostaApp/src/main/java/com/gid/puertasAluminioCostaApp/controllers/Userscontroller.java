@@ -1,6 +1,5 @@
 package com.gid.puertasAluminioCostaApp.controllers;
 
-import com.gid.puertasAluminioCostaApp.entities.Enterprise;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
