@@ -19,7 +19,7 @@ public class EnterpriseController {
     public List <Enterprise> listEnterprise() {return this.service.getListaEmpresa();}
 
     @PostMapping ("")
-    public Enterprise createEnterprise(@RequestBody Enterprise enterprise) {
+    public Enterprise crearEmpresaEnterprise(@RequestBody Enterprise enterprise) {
         return this.service.crearEmpresa(enterprise);
     }
 
