@@ -1,57 +1,51 @@
 package com.gid.puertasAluminioCostaApp.services;
 
-import com.gid.puertasAluminioCostaApp.entities.Enterprise;
 import com.gid.puertasAluminioCostaApp.entities.User;
+import com.gid.puertasAluminioCostaApp.repositories.IUserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
 
-    // Se prepara el servicio para la inicialización del repositorio.
+    // There's declaring the user repository
+    private final IUserRepository userRepository;
 
-    /*
-
-    *IUsuarioRepository IUsuarioRepository;
-
-    *public UsuarioService(IUsuarioRepository IUsuarioRepository) {
-        *this.IUsuarioRepository = IUsuarioRepository;
-    *}
-
-    */
-
-    public List<User> selectAll(){
-        // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new ArrayList<User>();
+    // There's initializing the user repository
+    public UserService(IUserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public User selectOne(int id){
-
-        // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new User(
-                "Pepito",
-                "Pérez",
-                new Enterprise(),
-                "usuario"
-        );
-
+    // This method returns a user arrayList
+    public ArrayList<User> selectAll(){
+        return (ArrayList<User>) userRepository.findAll();
     }
 
-    public void insertOne(String name, String email, Enterprise enterprise, String rol){
-
-        // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        new User(name, email, enterprise, rol);
-
+    // This method may return a user by id
+    public Optional<User> selectOne(long id){
+        return this.userRepository.findById(id);
     }
 
-    public void updateUser(int id){
-
+    // This method creates a new user
+    public void insertOne(User user){
+        this.userRepository.save(user);
     }
 
-    public void deleteUser(int id){
+    // This method update the name of a user by id
+    /**public void updateUser(long id, String name){
 
+        User myUser = this.userRepository.findById(id);
+
+        myUser.setName(name);
+        this.userRepository.save(myUser);
+
+    }*/
+
+    // This method deletes an enterprise by id
+    public void deleteOne(long id){
+        this.userRepository.deleteById(id);
     }
 
 }

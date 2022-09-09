@@ -1,16 +1,25 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Transactions")
 public class Transaction {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+    private long id;
+    @Column(name = "mount")
     private double mount;
-    String concept;
-    String employee;
+    @Column(name = "concept")
+    private String concept;
+    @Column(name = "employe")
+    private String employee;
 
-    public Transaction(double mount, String concept, String employee) {
-        this.mount = mount;
-        this.concept = concept;
-        this.employee = employee;
-    }
+    public long getId() { return id; }
+
+    public void setId(long id) { this.id = id; }
 
     public double getMount() {
         return this.mount;
