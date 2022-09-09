@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0ccc710-badd-4bfd-a7f2-70b2c9c7f8fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PAC/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PAC/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PAC/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puertasAluminioCostaApp/src/main/java/com/gid/puertasAluminioCostaApp/controllers/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PAC/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_2022_21_40__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PAC/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_2022_21_40__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puertasAluminioCostaApp/src/main/java/com/gid/puertasAluminioCostaApp/controllers/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/puertasAluminioCostaApp/src/main/java/com/gid/puertasAluminioCostaApp/controllers/TransactionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/jisus/PAC/puertasAluminioCostaApp"
+    "last_opened_file_path": "C:/Users/jisus/PAC/puertasAluminioCostaApp",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
