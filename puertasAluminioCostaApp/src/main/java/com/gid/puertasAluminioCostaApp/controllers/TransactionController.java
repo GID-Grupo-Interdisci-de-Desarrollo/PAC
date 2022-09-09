@@ -16,22 +16,22 @@ public class TransactionController {
     @RequestMapping(value="{id}", method = RequestMethod.GET, produces = "application/json");
     @ResponseBody
     public Enterprise findById(@PathVariable long id){
-        return EnterpriseService.getById(id);
+        return EnterpriseService.selectOne(id);
 
     }
     //POST
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json");
+    @RequestMapping(value = "{id}", method = RequestMethod.POST, produces = "application/json");
     @ResponseBody
 
     public Enterprise create(@RequestBody Enterprise enterprise){
-        return EnterpriseService.create(enterprise);
+        return EnterpriseService.insertOne(enterprise);
     }
 
     //PATCH
     @RequestMapping(value="{id}", method = RequestMethod.PATCH, produces = "application/json");
     @ResponseBody
     public Enterprise update(@RequestBody Enterprise enterprise, @PathVariable long id) {
-        return EnterpriseService.update(id, enterprise);
+        return EnterpriseService.updateUser(id, enterprise);
     }
 
     //DELETE
@@ -39,7 +39,7 @@ public class TransactionController {
     @ResponseBody
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable long id){
-        EnterpriseService.deleteById(id);
+        EnterpriseService.deleteUser(id);
     }
 
 }
