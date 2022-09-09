@@ -1,52 +1,56 @@
 package com.gid.puertasAluminioCostaApp.services;
 import com.gid.puertasAluminioCostaApp.entities.Enterprise;
+import com.gid.puertasAluminioCostaApp.repositories.IEnterpriseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EnterpriseService {
 
-    // Se prepara el servicio para la inicialización del repositorio.
+    // There's declaring the enterprise repository
+    private final IEnterpriseRepository enterpriseRepository;
 
-    /*
-
-     *IEmpresaRepository IEmpresaRepository;
-
-     *public empresaService(IEmpresaRepository IEmpresaRepository) {
-     *this.IEmpresaRepository = IEmpresaRepository;
-     *}
-
-     */
-
-    public List<Enterprise> selectAll(){
-        // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new ArrayList<Enterprise>();
+    // There's initializing the enterprise repository
+    public EnterpriseService(IEnterpriseRepository enterpriseRepository) {
+        this.enterpriseRepository = enterpriseRepository;
     }
 
-    public Enterprise selectOne(int id){
+    // This method returns an enterprise arrayList
+    public ArrayList<Enterprise> selectAll(){
+        return (ArrayList<Enterprise>) this.enterpriseRepository.findAll();
+    }
 
-        // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        return new Enterprise();
+    // This method may return an enterprise by id
+    public Optional<Enterprise> selectOne(long id){
+
+        return this.enterpriseRepository.findById(id);
 
     }
 
-    public void insertOne(String name, String address, int phone, String nit){
+    // This method creates a new enterprise
+    public void insertOne(Enterprise enterprise){
 
-        // Esto es una lógica innecesaria, solo se hace para evitar el error en el commit
-        new Enterprise();
-
-    }
-
-    public void updateUser(int id){
+        this.enterpriseRepository.save(enterprise);
 
     }
 
-    public void deleteUser(int id){
+    // This method update the enterprise name by id
+    /** public void updateEnterprise(long id, String name) {
+
+     Enterprise myEnterprise = this.enterpriseRepository.findById(id);
+
+     myEnterprise.setName(name);
+     this.enterpriseRepository.save(myEnterprise);
+
+     }*/
+
+    // This method deletes an enterprise by id
+    public void deleteOne(long id){
+
+        this.enterpriseRepository.deleteById(id);
 
     }
-
-
 
 }

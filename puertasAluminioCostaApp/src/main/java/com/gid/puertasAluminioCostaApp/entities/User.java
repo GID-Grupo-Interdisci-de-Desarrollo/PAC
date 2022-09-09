@@ -1,17 +1,31 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Userss")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+    private long id;
+    @Column(name = "name", nullable = false)
     private String name;
+    @Column(name = "email", nullable = false)
     private String email;
+    @OneToOne
+    @JoinColumn(name="idEnterprise")
     private Enterprise enterprise;
+    @Column(name = "rol")
     private String rol;
 
-    public User(String name, String email, Enterprise enterprise, String rol) {
-        this.name = name;
-        this.email = email;
-        this.enterprise = enterprise;
-        this.rol = rol;
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -30,11 +44,11 @@ public class User {
         this.email = email;
     }
 
-    public Enterprise getEmpresa() {
+    public Enterprise getEnterprise() {
         return this.enterprise;
     }
 
-    public void setEmpresa(Enterprise enterprise) {
+    public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
     }
 

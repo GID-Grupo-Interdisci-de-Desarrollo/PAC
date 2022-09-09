@@ -1,43 +1,52 @@
 package com.gid.puertasAluminioCostaApp.controllers;
 
 import com.gid.puertasAluminioCostaApp.entities.Enterprise;
+import com.gid.puertasAluminioCostaApp.services.EnterpriseService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/enterprise")
+
+// There's setting the enterprise route
+@RequestMapping("enterprise")
 public class EnterpriseController {
 
-    IEmpresaService EmpresaService;
+    // There's declaring the enterprise service
+    private final EnterpriseService enterpriseService;
 
-    public EnterpriseController(IEmpresaService EmpresaService){
-        this.EmpresaService = EmpresaService
+    // There's initializing the enterprise service
+    public EnterpriseController(EnterpriseService enterpriseService) {
+        this.enterpriseService = enterpriseService;
     }
 
+    // This method returns an enterprise arrayList
     @GetMapping ("")
-    public List <Enterprise> listEnterprise() {return this.service.getListaEmpresa();}
+    public List<Enterprise> selectAll() { return this.enterpriseService.selectAll() ;}
 
+    // This method creates a new enterprise
     @PostMapping ("")
-    public Enterprise crearEmpresaEnterprise(@RequestBody Enterprise enterprise) {
-        return this.service.crearEmpresa(enterprise);
+    public void insertOne(@RequestBody Enterprise enterprise) {
+        this.enterpriseService.insertOne(enterprise);
     }
 
-
-    @RequestMapping ("[id]")
-    @GetMapping
-    public String getNombre() {
-        return "nombre obtenido";
+    // This method may return an enterprise by id
+    @GetMapping("{id}")
+    public Optional<Enterprise> selectOne(@PathVariable long id) {
+        return this.enterpriseService.selectOne(id);
     }
 
-    @PatchMapping
-    public String updateNombre(){
-        return "usuario actualizado";
-    }
+    // This method update the enterprise name by id
+    /** @PatchMapping
+    public void updateOne(@PathVariable long id, @RequestBody String name){
+        this.enterpriseService.updateEnterprise(id, name);
+    }*/
 
-    @DeleteMapping
-    public String deleteNombre (){
-        return "nombre eliminado";
+    // This method deletes an enterprise by id
+    @DeleteMapping("{id}")
+    public void deleteOne (@PathVariable long id){
+        this.enterpriseService.deleteOne(id);
     }
 
 }
