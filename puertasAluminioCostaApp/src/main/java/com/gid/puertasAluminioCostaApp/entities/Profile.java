@@ -1,53 +1,38 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "Profile")
+@Table(name = "Profile") @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
 public class Profile {
 
-    @Id
-    @Column(unique = true)
-    private String id;
+    @Getter
+    @Id @Column(name = "id") @NonNull
+    private long id;
+
+    @Getter @Setter
     @Column(name = "image")
     private String image;
+
+    @Getter @Setter
     @Column(name = "phone")
     private String phone;
+
+    @Getter
     @Column(name = "createdAt")
     private Date createdAt = new Date(System.currentTimeMillis());
+
+    @Getter @Setter
     @Column(name = "updatedAt")
     private Date updatedAt = new Date(System.currentTimeMillis());
 
-    public String getId() {
-        return id;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
+    public Profile(String image, String phone, Date createdAt, Date updatedAt) {
         this.image = image;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 }

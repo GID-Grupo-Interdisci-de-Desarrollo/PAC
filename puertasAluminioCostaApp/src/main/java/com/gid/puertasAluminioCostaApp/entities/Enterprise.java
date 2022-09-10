@@ -1,74 +1,48 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name="Enterprises")
+@Table(name="Enterprises") @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
 public class Enterprise {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
+    @Getter
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY) @Column(unique = true, nullable = false) @NonNull
     private long id;
+
+    @Getter @Setter
     @Column(name="name")
     private String name;
+
+    @Getter @Setter
     @Column(name="document")
     private String document;
+
+    @Getter @Setter
     @Column(name="phone")
     private String phone;
+
+    @Getter @Setter
     @Column(name="address")
     private String address;
+
+    @Getter
     @Column(name = "createdAt")
     private Date createdAt = new Date(System.currentTimeMillis());
+
+    @Getter @Setter
     @Column(name = "updatedAt")
     private Date updatedAt = new Date(System.currentTimeMillis());
 
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Enterprise(String name, String document, String phone, String address, Date createdAt, Date updatedAt) {
         this.name = name;
-    }
-
-    public String getDocument() {
-        return document;
-    }
-
-    public void setDocument(String document) {
         this.document = document;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 }

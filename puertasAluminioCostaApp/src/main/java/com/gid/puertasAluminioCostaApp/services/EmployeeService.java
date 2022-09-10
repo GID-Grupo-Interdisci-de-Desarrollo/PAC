@@ -1,9 +1,8 @@
 package com.gid.puertasAluminioCostaApp.services;
 
 import com.gid.puertasAluminioCostaApp.entities.Employee;
-import com.gid.puertasAluminioCostaApp.entities.Profile;
+import com.gid.puertasAluminioCostaApp.enums.RolNameEnum;
 import com.gid.puertasAluminioCostaApp.repositories.IEmployeeRepository;
-import com.gid.puertasAluminioCostaApp.repositories.IProfileRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -14,15 +13,13 @@ import java.util.Optional;
 @Service
 public class EmployeeService {
 
-    // There's declaring the employee and profile repositories
+    // There's declaring the employee repository
     private final IEmployeeRepository employeeRepository;
 
-    // There's initializing the employee and profile repositories
+    // There's initializing the employee repository
     public EmployeeService(IEmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
-
-    /**Employee Methods*/
 
     // This method returns an employee arrayList
     public ArrayList<Employee> selectEmployees(){
@@ -50,13 +47,8 @@ public class EmployeeService {
             myEmployee.setUpdatedAt(new Date(System.currentTimeMillis()));
             updated = true;
         }
-        if(employee.getRole() != null){
+        if(employee.getRole() == RolNameEnum.Admin || employee.getRole() == RolNameEnum.Operario ){
             myEmployee.setRole(employee.getRole());
-            myEmployee.setUpdatedAt(new Date(System.currentTimeMillis()));
-            updated = true;
-        }
-        if(employee.getEnterprise() != null){
-            myEmployee.setEnterprise(employee.getEnterprise());
             myEmployee.setUpdatedAt(new Date(System.currentTimeMillis()));
             updated = true;
         }
