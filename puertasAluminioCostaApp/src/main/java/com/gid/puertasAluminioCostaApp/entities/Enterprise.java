@@ -1,6 +1,7 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name="Enterprises")
@@ -12,50 +13,62 @@ public class Enterprise {
     private long id;
     @Column(name="name")
     private String name;
-    @Column(name="address")
-    private String address;
+    @Column(name="document")
+    private String document;
     @Column(name="phone")
     private int phone;
-    @Column(name="nit")
-    private String nit;
+    @Column(name="address")
+    private String address;
+    @Column(name = "createdAt")
+    private Date createdAt = new Date(System.currentTimeMillis());
+    @Column(name = "updatedAt")
+    private Date updatedAt = new Date(System.currentTimeMillis());
 
     public long getId() {
-        return this.id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        return id;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public String getDocument() {
+        return document;
+    }
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
     public String getAddress() {
-        return this.address;
+        return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public int getPhone() {
-        return this.phone;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setPhone(int telefono) {
-        this.phone = telefono;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
-    public String getNit() {
-        return this.nit;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
-    public void setNit(String nit) {
-        this.nit = nit;
-    }
-
 }

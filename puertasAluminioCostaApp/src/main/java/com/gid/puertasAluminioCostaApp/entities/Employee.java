@@ -1,50 +1,51 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
-import com.gid.puertasAluminioCostaApp.entities.Employee;
+import com.gid.puertasAluminioCostaApp.enums.RolNameEnum;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "Transactions")
-public class Transaction {
+@Table(name = "Employee")
+public class Employee {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
-    @Column(name = "concept")
-    private String concept;
-    @Column(name = "amount")
-    private double mount;
+    @Column(name = "email", unique = true)
+    private String email;
+    @Column(name = "roleNamee")
+    private RolNameEnum role;
     @Column(name = "createdAt")
     private Date createdAt = new Date(System.currentTimeMillis());
     @Column(name = "updatedAt")
     private Date updatedAt = new Date(System.currentTimeMillis());
-    @ManyToOne
-    @JoinColumn(name = "employe")
-    private Employee employee;
+    @OneToOne
+    @JoinColumn(name = "idProfile")
+    private Profile profile;
     @ManyToOne
     @JoinColumn(name = "enterprise")
     private Enterprise enterprise;
+
 
     public long getId() {
         return id;
     }
 
-    public String getConcept() {
-        return concept;
+    public String getEmail() {
+        return email;
     }
 
-    public void setConcept(String concept) {
-        this.concept = concept;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public double getMount() {
-        return mount;
+    public RolNameEnum getRole() {
+        return role;
     }
 
-    public void setMount(double mount) {
-        this.mount = mount;
+    public void setRole(RolNameEnum role) {
+        this.role = role;
     }
 
     public Date getCreatedAt() {
@@ -59,12 +60,12 @@ public class Transaction {
         this.updatedAt = updatedAt;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public Profile getProfile() {
+        return profile;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 
     public Enterprise getEnterprise() {
@@ -74,4 +75,5 @@ public class Transaction {
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
     }
+
 }
