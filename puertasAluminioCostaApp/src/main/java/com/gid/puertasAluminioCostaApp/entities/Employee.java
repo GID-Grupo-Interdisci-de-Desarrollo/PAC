@@ -21,12 +21,12 @@ public class Employee {
     @Column(name = "updatedAt")
     private Date updatedAt = new Date(System.currentTimeMillis());
     @OneToOne
-    @JoinColumn(name = "idProfile")
+    @JoinColumn(name = "profile")
+
     private Profile profile;
     @ManyToOne
     @JoinColumn(name = "enterprise")
     private Enterprise enterprise;
-
 
     public long getId() {
         return id;

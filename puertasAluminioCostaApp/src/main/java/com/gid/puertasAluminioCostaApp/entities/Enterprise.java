@@ -16,7 +16,7 @@ public class Enterprise {
     @Column(name="document")
     private String document;
     @Column(name="phone")
-    private int phone;
+    private String phone;
     @Column(name="address")
     private String address;
     @Column(name = "createdAt")
@@ -44,11 +44,11 @@ public class Enterprise {
         this.document = document;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
