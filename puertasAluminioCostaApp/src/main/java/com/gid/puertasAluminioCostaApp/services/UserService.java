@@ -3,6 +3,7 @@ package com.gid.puertasAluminioCostaApp.services;
 import com.gid.puertasAluminioCostaApp.entities.User;
 import com.gid.puertasAluminioCostaApp.repositories.IUserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -34,14 +35,21 @@ public class UserService {
     }
 
     // This method update the name of a user by id
-    /**public void updateUser(long id, String name){
+    public void updateOne(long id, User user){
 
-        User myUser = this.userRepository.findById(id);
+        User myUser = this.userRepository.findById(id).get();
 
-        myUser.setName(name);
-        this.userRepository.save(myUser);
+        boolean updated = false;
+        if(StringUtils.hasLength(user.getName())){
+            myUser.setName(user.getName());
+            updated = true;
+        }
 
-    }*/
+        if(updated){
+            this.userRepository.save(myUser);
+        }
+
+    }
 
     // This method deletes an enterprise by id
     public void deleteOne(long id){

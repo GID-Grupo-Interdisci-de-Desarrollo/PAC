@@ -38,16 +38,15 @@ public class UserController {
     }
 
     // This method update the name of a user by id
-    /** @PatchMapping("{id}")
-    public void updateOne(@PathVariable long id, @RequestBody String name){
-        this.userService.updateEnterprise(id, name);
-    }*/
+    @PatchMapping("{id}")
+    public void updateOne(@PathVariable long id, @RequestBody User user){
+        this.userService.updateOne(id, user);
+    }
 
     // This method deletes an enterprise by id
     @DeleteMapping("{id}")
     public void deleteOne (@PathVariable long id){
         this.userService.deleteOne(id);
     }
-
 
 }
