@@ -1,20 +1,17 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
 import com.gid.puertasAluminioCostaApp.enums.RolNameEnum;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "Employee") @NoArgsConstructor @AllArgsConstructor
+@Table(name = "Employee") @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
 public class Employee {
 
     @Getter
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @NonNull
     private long id;
 
     @Getter @Setter

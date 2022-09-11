@@ -22,7 +22,7 @@ public class Transaction {
 
     @Getter @Setter
     @Column(name = "amount")
-    private double mount;
+    private double amount;
 
     @Getter @Setter
     @Column(name = "createdAt")
@@ -33,16 +33,16 @@ public class Transaction {
     private Date updatedAt = new Date(System.currentTimeMillis());
 
     @Getter @Setter
-    @ManyToOne(cascade = CascadeType.ALL) @JoinColumn(name = "employe")
+    @ManyToOne @JoinColumn(name = "employee")
     private Employee employee;
 
     @Getter @Setter
     @ManyToOne(cascade = CascadeType.ALL) @JoinColumn(name = "enterprise")
     private Enterprise enterprise;
 
-    public Transaction(String concept, double mount, Date createdAt, Date updatedAt, Employee employee, Enterprise enterprise) {
+    public Transaction(String concept, double amount, Date createdAt, Date updatedAt, Employee employee, Enterprise enterprise) {
         this.concept = concept;
-        this.mount = mount;
+        this.amount = amount;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.employee = employee;

@@ -1,6 +1,8 @@
 package com.gid.puertasAluminioCostaApp.services;
 import com.gid.puertasAluminioCostaApp.entities.Enterprise;
+import com.gid.puertasAluminioCostaApp.entities.Transaction;
 import com.gid.puertasAluminioCostaApp.repositories.IEnterpriseRepository;
+import com.gid.puertasAluminioCostaApp.repositories.ITransactionRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -11,12 +13,14 @@ import java.util.Optional;
 @Service
 public class EnterpriseService {
 
-    // There's declaring the enterprise repository
+    // There's declaring the enterprise and the transaction repositories
     private final IEnterpriseRepository enterpriseRepository;
+    private final ITransactionRepository transactionRepository;
 
-    // There's initializing the enterprise repository
-    public EnterpriseService(IEnterpriseRepository enterpriseRepository) {
+    // There's initializing the enterprise and the transaction repositories
+    public EnterpriseService(IEnterpriseRepository enterpriseRepository, ITransactionRepository transactionRepository) {
         this.enterpriseRepository = enterpriseRepository;
+        this.transactionRepository = transactionRepository;
     }
 
     // This method returns an enterprise arrayList
@@ -76,6 +80,65 @@ public class EnterpriseService {
     public void deleteEnterprise(long id){
 
         this.enterpriseRepository.deleteById(id);
+
+    }
+
+    /**Enterprise transactions methods*/
+
+    public ArrayList<Transaction> selectTransactions(long idEnterprise){
+        Enterprise myEnterprise = this.enterpriseRepository.findById(idEnterprise).get();
+        return (ArrayList<Transaction>) this.transactionRepository.findAllByEnterprise(myEnterprise);
+    }
+
+    public void insertTransaction(long idEnterprise, Transaction transaction){
+
+        Enterprise myEnterprise = this.enterpriseRepository.findById(idEnterprise).get();
+
+        transaction.setEnterprise(myEnterprise);
+
+        this.transactionRepository.save(transaction);
+
+    }
+
+    public void updateTransaction(long idEnterprise, long idTransaction, Transaction transactionData){
+
+        Enterprise myEnterprise = this.enterpriseRepository.findById(idEnterprise).get();
+        ArrayList<Transaction> transactionsEnterprise = (ArrayList<Transaction>) this.transactionRepository.findAllByEnterprise(myEnterprise);
+
+        Transaction myTransaction = null;
+        for(Transaction transaction: transactionsEnterprise){
+            if(transaction.getId() == idTransaction){
+                myTransaction = transaction;
+            }
+        }
+
+        boolean updated = false;
+        if(StringUtils.hasLength(transactionData.getConcept())){
+            myTransaction.setConcept(transactionData.getConcept());
+            myTransaction.setUpdatedAt(new Date(System.currentTimeMillis()));
+            updated = true;
+        }
+
+        if(updated){
+            this.transactionRepository.save(myTransaction);
+        }
+    }
+
+    public void deleteTransaction(long idEnterprise, long idTransaction){
+
+        Enterprise myEnterprise = this.enterpriseRepository.findById(idEnterprise).get();
+        ArrayList<Transaction> transactionsEnterprise = (ArrayList<Transaction>) this.transactionRepository.findAllByEnterprise(myEnterprise);
+
+        Transaction myTransaction = null;
+        for(Transaction transaction: transactionsEnterprise){
+            if(transaction.getId() == idTransaction){
+                myTransaction = transaction;
+            }
+        }
+
+        if (myTransaction != null){
+            this.transactionRepository.deleteById(myTransaction.getId());
+        }
 
     }
 
