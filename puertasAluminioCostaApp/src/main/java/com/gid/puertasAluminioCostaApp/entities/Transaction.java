@@ -33,7 +33,7 @@ public class Transaction {
     private Date updatedAt = new Date(System.currentTimeMillis());
 
     @Getter @Setter
-    @ManyToOne @JoinColumn(name = "employee")
+    @ManyToOne(cascade = CascadeType.DETACH) @JoinColumn(name = "employee")
     private Employee employee;
 
     @Getter @Setter
