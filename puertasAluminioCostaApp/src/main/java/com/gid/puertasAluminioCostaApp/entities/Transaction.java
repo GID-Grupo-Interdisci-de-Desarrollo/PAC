@@ -1,47 +1,52 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
-@Table(name = "Transactions")
+@Table(name = "Transactions") @NoArgsConstructor @AllArgsConstructor
 public class Transaction {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
+    @Getter
+    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
-    @Column(name = "mount")
-    private double mount;
+
+    @Getter @Setter
     @Column(name = "concept")
     private String concept;
-    @Column(name = "employe")
-    private String employee;
 
-    public long getId() { return id; }
+    @Getter @Setter
+    @Column(name = "amount")
+    private double amount;
 
-    public void setId(long id) { this.id = id; }
+    @Getter @Setter
+    @Column(name = "createdAt")
+    private Date createdAt = new Date(System.currentTimeMillis());
 
-    public double getMount() {
-        return this.mount;
-    }
+    @Getter @Setter
+    @Column(name = "updatedAt")
+    private Date updatedAt = new Date(System.currentTimeMillis());
 
-    public void setMount(double mount) {
-        this.mount = mount;
-    }
+    @Getter @Setter
+    @ManyToOne(cascade = CascadeType.DETACH) @JoinColumn(name = "employee")
+    private Employee employee;
 
-    public String getConcept() {
-        return this.concept;
-    }
+    @Getter @Setter
+    @ManyToOne(cascade = CascadeType.ALL) @JoinColumn(name = "enterprise")
+    private Enterprise enterprise;
 
-    public void setConcept(String concept) {
+    public Transaction(String concept, double amount, Date createdAt, Date updatedAt, Employee employee, Enterprise enterprise) {
         this.concept = concept;
-    }
-
-    public String getEmployee() {
-        return this.employee;
-    }
-
-    public void setEmployee(String employee) {
+        this.amount = amount;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.employee = employee;
+        this.enterprise = enterprise;
     }
+
 }

@@ -1,17 +1,19 @@
 package com.gid.puertasAluminioCostaApp.controllers;
 
-import com.gid.puertasAluminioCostaApp.entities.Enterprise;
+import com.gid.puertasAluminioCostaApp.entities.Transaction;
 import com.gid.puertasAluminioCostaApp.services.EnterpriseService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import java.util.ArrayList;
+
 
 @RestController
 
 // There's setting the enterprise route
-@RequestMapping("/enterprise/[id]/movements")
+@RequestMapping("enterprise")
 public class TransactionController {
-    // There's declaring the enterprise service
+
+    // There's declaring the enterprise service@RequestMapping("enterprise")
     private final EnterpriseService enterpriseService;
 
     // There's initializing the enterprise service
@@ -20,27 +22,27 @@ public class TransactionController {
     }
 
     // This method may return a movement by id
-    @GetMapping("{id/movements}")
-    public Optional<Enterprise> selectOne(@PathVariable long id) {
-        return this.enterpriseService.selectOne(id);
+    @GetMapping("{id}/movements")
+    public ArrayList<Transaction> selectTransactions(@PathVariable long id) {
+        return this.enterpriseService.selectTransactions(id);
     }
 
     // This method creates a new movement
-    @PostMapping ("{id/movements}")
-    public void insertOne(@RequestBody Enterprise enterprise) {
-        this.enterpriseService.insertOne(enterprise);
+    @PostMapping ("{id}/movements")
+    public void insertTransaction(@PathVariable long id, @RequestBody Transaction transaction) {
+        this.enterpriseService.insertTransaction(id, transaction);
     }
 
-    // This method update the movement of an enterprise by id
-     /** @PatchMapping("{id/movements}")
-    public void updateOne(@PathVariable long id, @RequestBody Enterprise enterprise){
-        this.enterpriseService.updateOne(id, enterprise);
+    // This method update the movement of an enterprise by idTransaction
+    @PatchMapping("{id}/movements/{idTransaction}")
+    public void updateOne(@PathVariable long id, @PathVariable long idTransaction, @RequestBody Transaction transactionData){
+        this.enterpriseService.updateTransaction(id, idTransaction, transactionData);
     }
-*/
+
     // This method deletes a movement by id
-    @DeleteMapping("{id/movements}")
-    public void deleteOne (@PathVariable long id){
-        this.enterpriseService.deleteOne(id);
+    @DeleteMapping("{id}/movements/{idTransaction}")
+    public void deleteOne (@PathVariable long id, @PathVariable long idTransaction){
+        this.enterpriseService.deleteTransaction(id, idTransaction);
     }
 
 }

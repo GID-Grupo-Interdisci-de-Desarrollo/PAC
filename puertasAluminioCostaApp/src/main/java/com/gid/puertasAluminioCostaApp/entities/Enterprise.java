@@ -1,61 +1,48 @@
 package com.gid.puertasAluminioCostaApp.entities;
 
+import lombok.*;
+
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
-@Table(name="Enterprises")
+@Table(name="Enterprises") @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
 public class Enterprise {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
+    @Getter
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY) @Column(unique = true, nullable = false) @NonNull
     private long id;
+
+    @Getter @Setter
     @Column(name="name")
     private String name;
+
+    @Getter @Setter
+    @Column(name="document")
+    private String document;
+
+    @Getter @Setter
+    @Column(name="phone")
+    private String phone;
+
+    @Getter @Setter
     @Column(name="address")
     private String address;
-    @Column(name="phone")
-    private int phone;
-    @Column(name="nit")
-    private String nit;
 
-    public long getId() {
-        return this.id;
-    }
+    @Getter
+    @Column(name = "createdAt")
+    private Date createdAt = new Date(System.currentTimeMillis());
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    @Getter @Setter
+    @Column(name = "updatedAt")
+    private Date updatedAt = new Date(System.currentTimeMillis());
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
+    public Enterprise(String name, String document, String phone, String address, Date createdAt, Date updatedAt) {
         this.name = name;
-    }
-
-    public String getAddress() {
-        return this.address;
-    }
-
-    public void setAddress(String address) {
+        this.document = document;
+        this.phone = phone;
         this.address = address;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
-
-    public int getPhone() {
-        return this.phone;
-    }
-
-    public void setPhone(int telefono) {
-        this.phone = telefono;
-    }
-
-    public String getNit() {
-        return this.nit;
-    }
-    public void setNit(String nit) {
-        this.nit = nit;
-    }
-
 }

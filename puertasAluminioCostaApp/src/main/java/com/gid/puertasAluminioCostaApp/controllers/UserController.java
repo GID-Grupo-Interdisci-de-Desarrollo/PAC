@@ -1,9 +1,12 @@
 package com.gid.puertasAluminioCostaApp.controllers;
 
-import com.gid.puertasAluminioCostaApp.entities.User;
-import com.gid.puertasAluminioCostaApp.services.UserService;
+import com.gid.puertasAluminioCostaApp.entities.Employee;
+import com.gid.puertasAluminioCostaApp.entities.Profile;
+import com.gid.puertasAluminioCostaApp.services.EmployeeService;
+import com.gid.puertasAluminioCostaApp.services.ProfileService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,40 +16,71 @@ import java.util.Optional;
 @RequestMapping("user")
 public class UserController {
 
-    // There's declaring the user service
-    private final UserService userService;
+    /**Employee crud methods */
+    // There's declaring the employee and profile services
+    private final EmployeeService employeeService;
+    private final ProfileService profileService;
 
-    // There's initializing the user service
-    public UserController(UserService userService) {
-        this.userService = userService;
+    // There's initializing the employee and profile services
+    public UserController(EmployeeService employeeService, ProfileService profileService) {
+        this.employeeService = employeeService;
+        this.profileService = profileService;
     }
 
     // This method returns a user arrayList
     @GetMapping("")
-    public List<User> selectAll() { return this.userService.selectAll() ;}
+    public List<Employee> selectEmployees() { return this.employeeService.selectEmployees() ;}
 
-    // This method creates a new user
+    // This method creates a new employee
     @PostMapping("")
-    public void insertOne(@RequestBody User user) {
-        this.userService.insertOne(user);
+    public void insertEmployee(@RequestBody Employee user) {
+        this.employeeService.insertEmployee(user);
     }
 
-    // This method may return a user by id
+    // This method may return a employee by id
     @GetMapping("{id}")
-    public Optional<User> selectOne(@PathVariable long id) {
-        return this.userService.selectOne(id);
+    public Optional<Employee> selectEmployee(@PathVariable long id) {
+        return this.employeeService.selectEmployee(id);
     }
 
-    // This method update the name of a user by id
+    // This method update the name of a employee by id
     @PatchMapping("{id}")
-    public void updateOne(@PathVariable long id, @RequestBody User user){
-        this.userService.updateOne(id, user);
+    public void updateEmployee(@PathVariable long id, @RequestBody Employee user){
+        this.employeeService.updateEmployee(id, user);
     }
 
-    // This method deletes an enterprise by id
+    // This method deletes an employee by id
     @DeleteMapping("{id}")
-    public void deleteOne (@PathVariable long id){
-        this.userService.deleteOne(id);
+    public void deleteEmployee (@PathVariable long id){
+        this.employeeService.deleteEmployee(id);
+    }
+
+    /**Profile crud methods */
+    @PostMapping("profile")
+    public void insertProfile(@RequestBody Profile profile) {
+        this.profileService.insertProfile(profile);
+    }
+
+    // This method returns a profile arrayList
+    @GetMapping("profile")
+    public ArrayList<Profile> selectProfiles() { return this.profileService.selectProfiles(); }
+
+    // This method may return a profile by id
+    @GetMapping("profile/{id}")
+    public Optional<Profile> selectProfile(@PathVariable long id) {
+        return this.profileService.selectProfile(id);
+    }
+
+    // This method update the name of a profile by id
+    @PatchMapping("profile/{id}")
+    public void updateProfile(@PathVariable long id, @RequestBody Profile profile){
+        this.profileService.updateProfile(id, profile);
+    }
+
+    // This method deletes a profile by id
+    @DeleteMapping("profile/{id}")
+    public void deleteProfile(@PathVariable long id){
+        this.profileService.deleteProfile(id);
     }
 
 }

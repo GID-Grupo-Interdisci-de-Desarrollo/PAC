@@ -23,30 +23,30 @@ public class EnterpriseController {
 
     // This method returns an enterprise arrayList
     @GetMapping ("")
-    public List<Enterprise> selectAll() { return this.enterpriseService.selectAll() ;}
+    public List<Enterprise> selectEnterprises() { return this.enterpriseService.selectEnterprises() ;}
 
     // This method creates a new enterprise
     @PostMapping ("")
-    public void insertOne(@RequestBody Enterprise enterprise) {
-        this.enterpriseService.insertOne(enterprise);
+    public void insertEnterprises(@RequestBody Enterprise enterprise) {
+        this.enterpriseService.insertEnterprise(enterprise);
     }
 
     // This method may return an enterprise by id
     @GetMapping("{id}")
-    public Optional<Enterprise> selectOne(@PathVariable long id) {
-        return this.enterpriseService.selectOne(id);
+    public Optional<Enterprise> selectEnterprise(@PathVariable long id) {
+        return this.enterpriseService.selectEnterprise(id);
     }
 
     // This method update the enterprise name by id
-    /** @PatchMapping
-    public void updateOne(@PathVariable long id, @RequestBody String name){
-        this.enterpriseService.updateEnterprise(id, name);
-    }*/
+    @PatchMapping("{id}")
+    public void updateOne(@PathVariable long id, @RequestBody Enterprise enterprise){
+        this.enterpriseService.updateEnterprise(id, enterprise);
+    }
 
     // This method deletes an enterprise by id
     @DeleteMapping("{id}")
-    public void deleteOne (@PathVariable long id){
-        this.enterpriseService.deleteOne(id);
+    public void deleteEnterprise (@PathVariable long id){
+        this.enterpriseService.deleteEnterprise(id);
     }
 
 }
