@@ -39,33 +39,35 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
-
+<main>
   <section class="d-flex justify-content-center">
-  <div class="px-4 py-5 ny-5 text-center">
-    <div class="mb-3">
-         <h1 class="display-9 fw-bold mb-2" > Nuevo movimiento de dinero </h1>
+    <div class=" w-40 border m-5 p-5  px-5 py-8 ny-6 text-center">
+      <di class="mb-3">
+        <h1 class="display-9 fw-bold mb-2" > Nuevo movimiento de dinero </h1>
 
-    </div>
-    <div class="mb-2">
-      <form action= "" >
-        <div class="mb-2">
-          <label for="monto" > Monto </label>
-          <input type="text" class= "form control"  monto = "Monto" id= "Monto" placeholder="ej:000000000"
-        </div>
-        <div class="mb-2">
-          <form action="">
+        <form action= "" >
+
             <div class="mb-2">
-              <label for="concepto" > Concepto </label>
-              <input type="text" class= "form control"  concepto = "Concepto" id= "Concepto" placeholder="ej:venta"
+              <label for="monto"class="d-block" > Monto </label>
+              <input type="text" class= "form control"  monto = "Monto" id= "Monto" placeholder="ej:000000000"
             </div>
-            <div class="mb-2">
-              <form action="">
-                <div class="mb-2">
-                  <label for="fecha" > Fecha </label>
-                  <input type="text" class= "form control" fecha = "Fecha" id= "Fecha" placeholder="ej:13/04/2022"
-                  <section class="d-flex justify-content-center">
-                    <div class="container-form-btn">
-                      <a href="transaction.html">
-                        Ingresar
 
+          <div class="mb-2">
+            <label for="concepto"class="d-block"> Concepto </label>
+            <input type="text" class= "form control"  concepto = "Concepto" id= "Concepto" placeholder="ej:venta"
+          </div>
+
+          <div class="mb-2">
+            <label for="fecha"class="d-block"> Fecha </label>
+            <input type="text" class= "form control" fecha = "Fecha" id= "Fecha" placeholder="ej:13/04/2022"
+          </div>
+
+          <div class="container-form-btn">
+            <a href="transaction.html">
+              Ingresar
+          </div>
+        </form>
+    </div>
+  </section>
+  </body>
 </html>
