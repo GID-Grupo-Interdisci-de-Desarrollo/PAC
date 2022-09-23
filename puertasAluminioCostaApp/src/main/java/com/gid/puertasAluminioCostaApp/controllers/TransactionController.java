@@ -32,11 +32,11 @@ public class TransactionController {
     }
 
     // This method update the movement of an enterprise by id
-    @PatchMapping("{id/movements}")
+     /** @PatchMapping("{id/movements}")
     public void updateOne(@PathVariable long id, @RequestBody Enterprise enterprise){
         this.enterpriseService.updateOne(id, enterprise);
     }
-
+*/
     // This method deletes a movement by id
     @DeleteMapping("{id/movements}")
     public void deleteOne (@PathVariable long id){
