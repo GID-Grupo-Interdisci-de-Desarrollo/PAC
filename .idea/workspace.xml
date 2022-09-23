@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0ccc710-badd-4bfd-a7f2-70b2c9c7f8fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PAC/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_2022_21_40__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PAC/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_2022_21_40__Changes_1.xml" afterDir="false" />
+    <list default="true" id="1fa39e1f-b977-4dcd-8cc0-e549bac27dd3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puertasAluminioCostaApp/src/main/java/com/gid/puertasAluminioCostaApp/controllers/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/puertasAluminioCostaApp/src/main/java/com/gid/puertasAluminioCostaApp/controllers/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puertasAluminioCostaApp/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/puertasAluminioCostaApp/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,32 +21,35 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2DgiXS5YLoJsXf73gLPpQr8iifj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2F9GbuGqFZXOSPd0h5fccQObWg5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/jisus/PAC/puertasAluminioCostaApp",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jisus/PAC&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b0ccc710-badd-4bfd-a7f2-70b2c9c7f8fd" name="Changes" comment="" />
-      <created>1661127170672</created>
+      <changelist id="1fa39e1f-b977-4dcd-8cc0-e549bac27dd3" name="Changes" comment="" />
+      <created>1663896968962</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1661127170672</updated>
+      <updated>1663896968962</updated>
+      <workItem from="1663896973375" duration="1449000" />
+      <workItem from="1663951832431" duration="611000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
